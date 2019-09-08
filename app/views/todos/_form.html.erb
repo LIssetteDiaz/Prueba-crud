@@ -1,0 +1,5 @@
+<h1 class="color-form">Ingrese texto para crear un todo</h1>
+<%= form_with model: Todo.new, local: true do |t| %>
+  <%= t.text_field :description %>
+  <%= t.submit "Enviar", class: 'color-enviar' %>
+<% end %>

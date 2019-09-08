@@ -1,0 +1,27 @@
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-3 ml-3 mt-3">
+        <div class="card-body">
+          <h1 class="titulo p-3">No completados</h1>
+          <% @todos.each do |todo| %>
+            <% if todo.completed != true %>
+              <h3 class="pl-3"> <%= link_to todo.description, todo, class: 'color-todo' %> </h3> <br>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card mb-3 ml-3 mt-3">
+        <div class="card-body">
+          <h1 class="titulo p-3">Completados</h1>
+          <% @todos.each do |todo| %>
+            <% if todo.completed == true %>
+              <h3 class="pl-3"> <%= link_to todo.description, todo, class: 'color-todo' %> </h3> <br>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

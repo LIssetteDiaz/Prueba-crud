@@ -1,0 +1,23 @@
+<div class="card mb-3 ml-3 mt-3">
+  <div class="card-body">
+    <% @todos.each do |todo| %>
+      <h1> <%= link_to todo.description, todo, class: 'color-todo' %> </h1>
+      <% if todo.completed == true %>
+        Tarea completada
+      <% else %>
+        Tarea no completada
+        <button type="button" class="btn ml-3">
+        <%= link_to 'Completar', complete_path(todo), class: 'color-letra' %>
+        </button>
+      <% end %>
+      <button type="button" class="btn ml-3">
+      <%= link_to 'Editar', todo_edit_path(todo), class: 'color-letra' %>
+      </button>
+      <button type="button" class="btn ml-3">
+      <%= link_to 'Eliminar', todo, method: :delete, class: 'color-letra' %>
+      </button>
+    <% end %>
+
+  </div>
+</div>
+<button type="button" class="btn ml-3"> <%= link_to 'Crear ToDo', todos_new_path, class: 'color-letra' %> </button>
