@@ -1,6 +1,9 @@
 
 <div class="card mb-3 ml-3 mt-3 style="width: 40rem;"">
   <div class="card-body">
-    <%= render 'todos/form' %>
+    <%= form_with model: @todo, local: true do |t| %>
+      <%= t.text_field :description %>
+      <%= t.submit "Enviar", class: 'color-enviar' %>
+    <% end %>
   </div>
 </div>
